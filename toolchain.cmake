@@ -1,0 +1,13 @@
+if (DEFINED TARGET)
+    set(CMAKE_C_COMPILER ${CMAKE_SOURCE_DIR}/vendor/zig/zig cc -target ${TARGET})
+    set(CMAKE_CXX_COMPILER ${CMAKE_SOURCE_DIR}/vendor/zig/zig c++ -target ${TARGET})
+    set(CMAKE_LINKER ${CMAKE_SOURCE_DIR}/vendor/zig/zig c++ -target ${TARGET})
+else()
+    message(WARNING "Cross-compilation: TARGET is not set.")
+    set(CMAKE_C_COMPILER ${CMAKE_SOURCE_DIR}/vendor/zig/zig cc)
+    set(CMAKE_CXX_COMPILER ${CMAKE_SOURCE_DIR}/vendor/zig/zig c++)
+    set(CMAKE_LINKER ${CMAKE_SOURCE_DIR}/vendor/zig/zig c++)
+endif()
+
+set(CMAKE_C_COMPILER_ID ${CMAKE_SOURCE_DIR}/vendor/zig/zig cc)
+set(CMAKE_CXX_COMPILER_ID ${CMAKE_SOURCE_DIR}/vendor/zig/zig c++)

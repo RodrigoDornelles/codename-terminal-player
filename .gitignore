@@ -1,0 +1,8 @@
+-
+html
+latex
+build
+vendor
+
+Thumbs.db
+.DS_Store
